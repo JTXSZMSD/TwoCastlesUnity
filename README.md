@@ -1,4 +1,4 @@
-The simple Unity game based on UI resource management
+A simple Unity game based on UI resource management
 
 Now ready:
 
