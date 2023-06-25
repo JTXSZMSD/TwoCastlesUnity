@@ -24,6 +24,11 @@ public class ResourceSystem : MonoBehaviour
     public byte IronMineImprovementTurn = 0;
     public byte StoneQuarryImprovementTurn = 0;
 
+    private void Awake()
+    {
+        income();
+    }
+
     public void income()
     {
         //Gold
@@ -33,33 +38,33 @@ public class ResourceSystem : MonoBehaviour
             Gold = ResourceLimit;
         }
 
-        //    //Lumber
-        //    Lumber += LumberIncome();
-        //    if (Lumber > ResourceLimit) 
-        //    { 
-        //        Lumber = ResourceLimit;
-        //    }
+        //Lumber
+        Lumber += LumberIncome();
+        if (Lumber > ResourceLimit)
+        {
+            Lumber = ResourceLimit;
+        }
 
-        //    //Iron
-        //    Iron += IronIncome();
-        //    if (Iron > ResourceLimit) 
-        //    { 
-        //        Iron = ResourceLimit;
-        //    }
+        //Iron
+        Iron += IronIncome();
+        if (Iron > ResourceLimit)
+        {
+            Iron = ResourceLimit;
+        }
 
-        //    //Stone
-        //    Stone += StoneIncome();
-        //    if (Stone > ResourceLimit)
-        //    { 
-        //        Stone = ResourceLimit; 
-        //    }
+        //Stone
+        Stone += StoneIncome();
+        if (Stone > ResourceLimit)
+        {
+            Stone = ResourceLimit;
+        }
 
-        //    //People
-        //    People += PeopleIncome();
-        //    if (People > PeopleLimit)
-        //    {
-        //        People = PeopleLimit;
-        //    }
+        //People
+        People += PeopleIncome();
+        if (People > PeopleLimit)
+        {
+            People = PeopleLimit;
+        }
     }
 
     private uint GoldIncome()
@@ -77,27 +82,67 @@ public class ResourceSystem : MonoBehaviour
         return temp;
     }
 
-    //private uint LumberIncome()
-    //{
-    //    uint temp;
-    //    return temp;
-    //}
+    private uint LumberIncome()
+    {
+        uint temp;
+        if (LumberMillImprovementTurn > 0)
+        {
+            temp = Convert.ToUInt32((Buildings.LumberMillLevel * 30 + 140) * 1.25);
+            LumberMillImprovementTurn -= 1;
+        }
+        else
+        {
+            temp = Buildings.LumberMillLevel * 30 + 140;
+        }
+        return temp;
+    }
 
-    //private uint IronIncome()
-    //{
-    //    uint temp;
-    //    return temp;
-    //}
+    private uint IronIncome()
+    {
+        uint temp;
+        if (IronMineImprovementTurn > 0)
+        {
+            temp = Convert.ToUInt32((Buildings.IronMineLevel * 30 + 140) * 1.25);
+            IronMineImprovementTurn -= 1;
+        }
+        else
+        {
+            temp = Buildings.IronMineLevel * 30 + 140;
+        }
+        return temp;
+    }
 
-    //private uint StoneIncome() 
-    //{
-    //    uint temp;
-    //    return temp;
-    //}
+    private uint StoneIncome()
+    {
+        uint temp;
+        if (StoneQuarryImprovementTurn > 0)
+        {
+            temp = Convert.ToUInt32((Buildings.StoneQuarryLevel * 30 + 140) * 1.25);
+            StoneQuarryImprovementTurn -= 1;
+        }
+        else
+        {
+            temp = Buildings.StoneQuarryLevel * 30 + 140;
+        }
+        return temp;
+    }
 
-    //private uint PeopleIncome()
-    //{
-    //    uint temp;
-    //    return temp;
-    //}
+    private uint PeopleIncome()
+    {
+        uint temp;
+        if (Buildings.HousesLevel <= 4)
+        {
+            temp = 5;
+        }
+        else if (Buildings.HousesLevel > 4 && Buildings.HousesLevel <= 8)
+        {
+            temp = 20;
+        }
+        else
+        {
+            temp = 40;
+        }
+
+        return temp;
+    }
 }
