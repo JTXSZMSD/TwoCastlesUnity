@@ -49,6 +49,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8691520971647271692}
     m_Modifications:
+    - target: {fileID: 1361307717427251703, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
+      propertyPath: parentObject
+      value: 
+      objectReference: {fileID: 1907486708403616890}
+    - target: {fileID: 1361307717427251703, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
+      propertyPath: parentObjectToDestroy
+      value: 
+      objectReference: {fileID: 1907486708403616890}
+    - target: {fileID: 1361307717427251703, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
+      propertyPath: prefabInterfaceToSpawn
+      value: 
+      objectReference: {fileID: 4669372023583536188, guid: eac803689e298954cbf87a60d8fc90e8, type: 3}
     - target: {fileID: 3090200547431944865, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
       propertyPath: m_Name
       value: BuildingsButton
@@ -138,14 +150,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8904247279364773417, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904247279364773417, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1907486708403616890}
+      objectReference: {fileID: 2086958897220024104}
+    - target: {fileID: 8904247279364773417, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904247279364773417, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildingsButtonScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
+--- !u!114 &2086958897220024104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1361307717427251703, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}
+  m_PrefabInstance: {fileID: 1013881831295827679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3335242dc4939c47b21e4a5e33bea35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4274064251702509809 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3837786984847293998, guid: 69e9558336e17af45b6c7a70772f2c03, type: 3}

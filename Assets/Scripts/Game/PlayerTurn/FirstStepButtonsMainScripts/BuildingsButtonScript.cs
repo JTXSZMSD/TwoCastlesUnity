@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class BuildingsButtonScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private GameObject parentObjectToDestroy;
+    [SerializeField]
+    private GameObject prefabInterfaceToSpawn;
+    private GameObject canvas;
+
+    public void OnClickAction()
     {
+        canvas = GameObject.Find("Canvas");
+        Instantiate(prefabInterfaceToSpawn, canvas.transform);
+        Destroy(parentObjectToDestroy);
         
     }
 
