@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1656160402622948512}
   - component: {fileID: 3837786984847293998}
   - component: {fileID: 8904247279364773417}
-  - component: {fileID: 1361307717427251703}
+  - component: {fileID: 4107124831941948763}
   m_Layer: 5
   m_Name: BuildingsButton
   m_TagString: Untagged
@@ -258,10 +258,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 4107124831941948763}
+        m_TargetAssemblyTypeName: InterfaceDestroySpawnScript, Assembly-CSharp
+        m_MethodName: OnClickAction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -270,7 +270,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &1361307717427251703
+--- !u!114 &4107124831941948763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,6 +279,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3090200547431944865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3335242dc4939c47b21e4a5e33bea35, type: 3}
+  m_Script: {fileID: 11500000, guid: f2f151b340e31d342b9649e15617be76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentObjectToDestroy: {fileID: 0}
+  prefabInterfaceToSpawn: {fileID: 0}
